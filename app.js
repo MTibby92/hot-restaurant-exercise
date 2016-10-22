@@ -21,43 +21,43 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }))
 // (DATA)
 // =============================================================
 var tables = [{
-    customerName: "TEST",
-    customerEmail: "TEST",
-    customerID: "TEST",
-    phoneNumber: "TEST"
+    customerName: 'TEST',
+    customerEmail: 'TEST',
+    customerID: 'TEST',
+    phoneNumber: 'TEST'
 }, {
-    customerName: "TEST",
-    customerEmail: "TEST",
-    customerID: "TEST",
-    phoneNumber: "TEST"
+    customerName: 'TEST',
+    customerEmail: 'TEST',
+    customerID: 'TEST',
+    phoneNumber: 'TEST'
 }, {
-    customerName: "TEST",
-    customerEmail: "TEST",
-    customerID: "TEST",
-    phoneNumber: "TEST"
+    customerName: 'TEST',
+    customerEmail: 'TEST',
+    customerID: 'TEST',
+    phoneNumber: 'TEST'
 }, {
-    customerName: "TEST",
-    customerEmail: "TEST",
-    customerID: "TEST",
-    phoneNumber: "TEST"
+    customerName: 'TEST',
+    customerEmail: 'TEST',
+    customerID: 'TEST',
+    phoneNumber: 'TEST'
 }, {
-    customerName: "TEST",
-    customerEmail: "TEST",
-    customerID: "TEST",
-    phoneNumber: "TEST"
+    customerName: 'TEST',
+    customerEmail: 'TEST',
+    customerID: 'TEST',
+    phoneNumber: 'TEST'
 }]
 
 
 var waitList = [{
-    customerName: "TEST",
-    customerEmail: "TEST",
-    customerID: "TEST",
-    phoneNumber: "TEST"
+    customerName: 'TEST',
+    customerEmail: 'TEST',
+    customerID: 'TEST',
+    phoneNumber: 'TEST'
 }, {
-    customerName: "TEST",
-    customerEmail: "TEST",
-    customerID: "TEST",
-    phoneNumber: "TEST"
+    customerName: 'TEST',
+    customerEmail: 'TEST',
+    customerID: 'TEST',
+    phoneNumber: 'TEST'
 }]
 
 // Basic route that sends the user first to the AJAX Page
