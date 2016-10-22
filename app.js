@@ -20,40 +20,42 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }))
 
 // (DATA)
 // =============================================================
-var tables = [{
-    customerName: 'TEST',
-    customerEmail: 'TEST',
-    customerID: 'TEST',
-    phoneNumber: 'TEST'
-}, {
-    customerName: 'TEST',
-    customerEmail: 'TEST',
-    customerID: 'TEST',
-    phoneNumber: 'TEST'
-}, {
-    customerName: 'TEST',
-    customerEmail: 'TEST',
-    customerID: 'TEST',
-    phoneNumber: 'TEST'
-}, {
-    customerName: 'TEST',
-    customerEmail: 'TEST',
-    customerID: 'TEST',
-    phoneNumber: 'TEST'
-}]
+var reservations = 
+[
+	[{
+	    customerName: 'TABLE1',
+	    customerEmail: 'TEST',
+	    customerID: 'TEST',
+	    phoneNumber: 'TEST'
+	}, {
+	    customerName: 'TABLE2',
+	    customerEmail: 'TEST',
+	    customerID: 'TEST',
+	    phoneNumber: 'TEST'
+	}, {
+	    customerName: 'TABLE2',
+	    customerEmail: 'TEST',
+	    customerID: 'TEST',
+	    phoneNumber: 'TEST'
+	}, {
+	    customerName: 'TABLE2',
+	    customerEmail: 'TEST',
+	    customerID: 'TEST',
+	    phoneNumber: 'TEST'
+	}],
+	[{
+	    customerName: 'WAIT',
+	    customerEmail: 'TEST',
+	    customerID: 'TEST',
+	    phoneNumber: 'TEST'
+	}, {
+	    customerName: 'WAIT',
+	    customerEmail: 'TEST',
+	    customerID: 'TEST',
+	    phoneNumber: 'TEST'
+	}]
+]
 
-
-var waitList = [{
-    customerName: 'TEST',
-    customerEmail: 'TEST',
-    customerID: 'TEST',
-    phoneNumber: 'TEST'
-}, {
-    customerName: 'TEST',
-    customerEmail: 'TEST',
-    customerID: 'TEST',
-    phoneNumber: 'TEST'
-}]
 
 // Basic route that sends the user first to the AJAX Page
 // =============================================================
@@ -74,11 +76,11 @@ app.get('/test', function (req, res) {
 })
 
 app.get('/api/tables', function (req, res) {
-	res.json(tables)
+	res.json(reservations[0])
 })
 
 app.get('/api/waitlist', function (req, res) {
-	res.json(waitList)
+	res.json(reservations[1])
 })
 
 app.post('/api/new', function (req, res) {
@@ -86,13 +88,17 @@ app.post('/api/new', function (req, res) {
 
 	console.log(newReservation);
 
-	if (tables.length <= 4) {
-		tables.push(newReservation)
+	if (reservations[0].length <= 4) {
+		reservations[0].push(newReservation)
 	} else {
-		waitList.push(newReservation)
+		reservations[1].push(newReservation)
 	}
 	
 	res.json(newReservation);
+})
+
+app.get('/api', function (req, res) {
+	res.json(reservations)
 })
 
 
