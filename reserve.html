@@ -63,31 +63,32 @@
 	</div>
 
 	<script type="text/javascript">
-	  // Question: What does this code do?
-	  $('#addBtn').on('click', function () {
+	// Question: What does this code do?
+	$('#addBtn').on('click', function() {
 	    var newReservation = {
-	      name: $('#name').val().trim(),
-	      email: $('#email').val().trim(),
-	      id: $('#id').val().trim(),
-	      phoneNum: $('#phoneNum').val().trim()
-				};
+	        customerName: $('#name').val().trim(),
+	        customerEmail: $('#email').val().trim(),
+	        customerID: $('#id').val().trim(),
+	        phoneNumber: $('#phoneNum').val().trim()
+	    }
 
-	  var currentURL = window.location.origin;
+	    var currentURL = window.location.origin;
 
-	  // Question: What does this code do??
-	  $.post(currentURL + '/api/new', newReservation)
-	    .done(function (data) {
-	      console.log(data);
-	      alert('Adding reservation...')
-	      $('#name').val('')
-	      $('#email').val('')
-        $('#id').val('')
-				$('#phoneNum').val('')
-	      });
+	    // Question: What does this code do??
+	    $.post(currentURL + '/api/new', newReservation)
+	        .done(function(data) {
+	            console.log(data)
+	            alert('Adding reservation...')
+	            $('#name').val('')
+	            $('#email').val('')
+	            $('#id').val('')
+	            $('#phoneNum').val('')
+	        });
 
-	    return false;
-	  });
+		    return false;
+		});
 	</script>
+
 
 </body>
 </html>
