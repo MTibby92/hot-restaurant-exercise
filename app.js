@@ -75,6 +75,10 @@ app.get('/test', function (req, res) {
 	res.sendFile(path.join(__dirname, 'test.html'))
 })
 
+app.get('/test2', function (req, res) {
+	res.sendFile(path.join(__dirname, 'test2.html'))
+})
+
 app.get('/api/tables', function (req, res) {
 	res.json(reservations[0])
 })
