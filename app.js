@@ -48,8 +48,6 @@ var tables = [{
 }]
 
 
-
-
 var waitList = [{
     customerName: "TEST",
     customerEmail: "TEST",
@@ -65,7 +63,7 @@ var waitList = [{
 // Basic route that sends the user first to the AJAX Page
 // =============================================================
 app.get('/', function (req, res) {
-	res.sendFile(path.join(__dirname, 'home.html'))
+	res.sendFile(path.join(__dirname, 'index.html'))
 })
 
 app.get('/tables', function (req, res) {
@@ -82,6 +80,21 @@ app.get('/api/tables', function (req, res) {
 
 app.get('/api/waitlist', function (req, res) {
 	res.json(waitList)
+})
+
+app.post('/api/new', function (req, res) {
+	var newReservation = req.body;
+	// newReservation.routeName = newReservation.name.replace(/\s+/g, '').toLowerCase();
+
+	console.log(newReservation);
+
+	if (tables.length <= 4) {
+		tables.push(newReservation)
+	} else {
+		waitList.push(newReservation)
+	}
+	
+	res.json(newReservation);
 })
 
 
