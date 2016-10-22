@@ -16,8 +16,8 @@
 			<h1>Hot Restaurant</h1>
 			<h2>Current Reservations and Waiting List</h2>
 			<hr>
-			<button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-fire"></span>Make a Reservation</button>
-			<button type="button" class="btn btn-da btn-lg"><span class="glyphicon glyphicon-fire"></span>Make a Reservation</button>
+			<a href="/reserve"<button type="submit" class="btn btn-danger btn-lg" id="reserveBtn"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
+			<a href="/"><button type="submit" class="btn btn-default btn-lg" id="homeBtn"><span class="glyphicon glyphicon-home"></span></button></a>
 		</div>
 		<div class="row">
 
@@ -44,27 +44,24 @@
 
 
 
+
 	<script type="text/javascript">
-		// QUESTION: What is this code doing?
-		$('#searchBtn').on('click', function () {
-			var searchedCharacter = $('#characterSearch').val().trim();
+		var currentURL = window.location.origin;
 
-			searchedCharacter = searchedCharacter.replace(/\s+/g, '').toLowerCase();
+		console.log(currentURL + '/api');
 
-			// QUESTION: What does $.get do? What are the parameters it is expecting?
-			$.get('http://localhost:3000/api/' + searchedCharacter, function (data) {
-				console.log(data);
-				if (data) {
-					$('#stats').show();
-					$('#name').text(data.name);
-					$('#role').text(data.role);
-					$('#age').text(data.age);
-					$('#forcePoints').text(data.forcePoints);
-				} else {
-					$('#name').text('The force is not strong with this one. Your character was not found. ');
-					$('#stats').hide();
-				}
-			});
+		$.get(currentURL + '/api', function (data) {
+			for (var i = 0; i < data.length; i++) {
+				var wellSection = $('<div>');
+				wellSection.addClass('well');
+				wellSection.attr('id', 'characterWell-' + i);
+				$('#wellSection').append(wellSection);
+
+				$('#characterWell-' + i).append('<h2>' + data[i].name + '</h2>');
+				$('#characterWell-' + i).append('<h3>Role: ' + data[i].role + '</h4>');
+				$('#characterWell-' + i).append('<h3>Age: ' + data[i].age + '</h4>');
+				$('#characterWell-' + i).append('<h3>Force Points: ' + data[i].forcePoints + '</h4>');
+			}
 		});
 	</script>
 
