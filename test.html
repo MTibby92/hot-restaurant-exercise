@@ -74,11 +74,17 @@
 
 			var currentURL = window.location.origin;
 
+
+
 			// Question: What does this code do??
 			$.post(currentURL + '/api/new', newReservation)
 				.done(function (data) {
 					console.log(data);
-					alert('Adding reservation...');
+					alert('Adding reservation...')
+					$('#name').val('')
+					$('#email').val('')
+					$('#id').val('')
+					$('#phoneNum').val('')
 				});
 
 			return false;
