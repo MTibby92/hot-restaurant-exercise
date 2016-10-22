@@ -16,8 +16,8 @@
 			<h1> Hot Restaurant</h1>
 			<hr>
 			<h3>Make Your Reservation</h3><br>
-			<button type="submit" class="btn btn-primary btn-lg" id="tablesBtn"></span><span class="glyphicon glyphicon-list-alt"></span> View Tables</button>
-			<button type="submit" class="btn btn-default btn-lg" id="homeBtn"><span class="glyphicon glyphicon-home"></span></button>
+			<a href="/table"><button type="submit" class="btn btn-primary btn-lg" id="tablesBtn"></span><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
+			<a href="/"><button type="submit" class="btn btn-default btn-lg" id="homeBtn"><span class="glyphicon glyphicon-home"></span></button></a>
 		</div>
 		<div class="row">
 
@@ -38,7 +38,32 @@
 		</div>
 	</div>
 
+	<script type="text/javascript">
+	  // Question: What does this code do?
+	  $('#addBtn').on('click', function () {
+	    var newReservation = {
+	      name: $('#name').val().trim(),
+	      email: $('#email').val().trim(),
+	      id: $('#id').val().trim(),
+	      phoneNum: $('#phoneNum').val().trim()
+				};
 
+	  var currentURL = window.location.origin;
+
+	  // Question: What does this code do??
+	  $.post(currentURL + '/api/new', newReservation)
+	    .done(function (data) {
+	      console.log(data);
+	      alert('Adding reservation...')
+	      $('#name').val('')
+	      $('#email').val('')
+        $('#id').val('')
+				$('#phoneNum').val('')
+	      });
+
+	    return false;
+	  });
+	</script>
 
 </body>
 </html>
