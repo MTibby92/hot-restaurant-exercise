@@ -18,6 +18,26 @@ app.use(bodyParser.text())
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }))
 
 
+// (DATA)
+// =============================================================
+var tables = [{
+	
+}, {
+	
+}, {
+	
+}]
+
+
+
+var waitList = [{
+	
+}, {
+	
+}, {
+	
+}]
+
 // Basic route that sends the user first to the AJAX Page
 // =============================================================
 app.get('/', function (req, res) {
