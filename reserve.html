@@ -15,7 +15,7 @@
 		<div class="jumbotron text-center">
 			<h1> Hot Restaurant</h1>
 			<hr>
-			<h3>Make Your Reservation</h3><br>
+			<h2>Make Your Reservation</h2><br>
 			<a href="/table"><button type="submit" class="btn btn-primary btn-lg" id="tablesBtn"></span><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
 			<a href="/"><button type="submit" class="btn btn-default btn-lg" id="homeBtn"><span class="glyphicon glyphicon-home"></span></button></a>
 		</div>
@@ -25,15 +25,39 @@
 
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 class="panel-title"><strong></strong></h3>
+						<h3 class="panel-title"><strong>Add Reservation</strong></h3>
 					</div>
 					<div class="panel-body">
-						<input type="text" id="inputForm" class="form-control" >
+						<form action="" method="POST" role="form">
+
+							<div class="form-group">
+								<label for="">Name</label>
+								<input type="text" class="form-control" id="name" placeholder="">
+							</div>
+
+							<div class="form-group">
+								<label for="">Email</label>
+								<input type="email" class="form-control" id="email" placeholder="">
+							</div>
+
+							<div class="form-group">
+								<label for="">ID</label>
+								<input type="text" class="form-control" id="id" placeholder="">
+							</div>
+
+							<div class="form-group">
+								<label for="">Phone Number</label>
+								<input type="text" class="form-control" id="phoneNum" placeholder="">
+							</div>
+
+						</form>
 						<br>
 						<div class="text-right">
+							<button type="submit" class="btn btn-primary btn-md" id="addBtn"></span><span class="glyphicon glyphicon-fire"></span> Post Data</button>
 						</div>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</div>

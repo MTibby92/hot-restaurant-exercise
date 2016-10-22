@@ -40,11 +40,6 @@ var tables = [{
     customerEmail: 'TEST',
     customerID: 'TEST',
     phoneNumber: 'TEST'
-}, {
-    customerName: 'TEST',
-    customerEmail: 'TEST',
-    customerID: 'TEST',
-    phoneNumber: 'TEST'
 }]
 
 
