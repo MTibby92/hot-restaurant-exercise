@@ -21,21 +21,45 @@ app.use(bodyParser.json({ type: 'application/vnd.api+json' }))
 // (DATA)
 // =============================================================
 var tables = [{
-	
+    customerName: "TEST",
+    customerEmail: "TEST",
+    customerID: "TEST",
+    phoneNumber: "TEST"
 }, {
-	
+    customerName: "TEST",
+    customerEmail: "TEST",
+    customerID: "TEST",
+    phoneNumber: "TEST"
 }, {
-	
+    customerName: "TEST",
+    customerEmail: "TEST",
+    customerID: "TEST",
+    phoneNumber: "TEST"
+}, {
+    customerName: "TEST",
+    customerEmail: "TEST",
+    customerID: "TEST",
+    phoneNumber: "TEST"
+}, {
+    customerName: "TEST",
+    customerEmail: "TEST",
+    customerID: "TEST",
+    phoneNumber: "TEST"
 }]
 
 
 
+
 var waitList = [{
-	
+    customerName: "TEST",
+    customerEmail: "TEST",
+    customerID: "TEST",
+    phoneNumber: "TEST"
 }, {
-	
-}, {
-	
+    customerName: "TEST",
+    customerEmail: "TEST",
+    customerID: "TEST",
+    phoneNumber: "TEST"
 }]
 
 // Basic route that sends the user first to the AJAX Page
@@ -53,11 +77,11 @@ app.get('/reserve', function (req, res) {
 })
 
 app.get('/api/tables', function (req, res) {
-	res.json()
+	res.json(tables)
 })
 
 app.get('/api/waitlist', function (req, res) {
-	res.json()
+	res.json(waitList)
 })
 
 
